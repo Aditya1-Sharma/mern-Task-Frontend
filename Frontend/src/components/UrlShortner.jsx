@@ -16,7 +16,9 @@ function UrlShortner() {
 
   const copyToClipBoard = async (e) => {
     try {
-      const textToCopy = "http://localhost:8000/api/v1/user/url/" + apidata;
+      const textToCopy =
+        "https://mern-task-backend-qceg.onrender.com/api/v1/user/url/" +
+        apidata;
 
       await navigator.clipboard.writeText(textToCopy);
       setCopySuccess(true);
@@ -35,7 +37,7 @@ function UrlShortner() {
     }
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/url",
+        "https://mern-task-backend-qceg.onrender.com/api/v1/user/url",
         {
           url: inputValue,
         }
@@ -69,7 +71,10 @@ function UrlShortner() {
           {apidata && setCopySuccess && (
             <input
               type="text"
-              value={"http://localhost:8000/api/v1/user/url/" + apidata}
+              value={
+                "https://mern-task-backend-qceg.onrender.com/api/v1/user/url/" +
+                apidata
+              }
               onChange={(e) => setCopyText(e.target.value)}
               className="w-full p-2 border rounded bg-gray-700 text-white"
               readOnly

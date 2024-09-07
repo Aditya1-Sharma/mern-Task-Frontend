@@ -29,7 +29,7 @@ export default function Navbar() {
   const logout = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/logout",
+        "https://mern-task-backend-qceg.onrender.com/api/v1/user/logout",
         {},
         {
           withCredentials: true,

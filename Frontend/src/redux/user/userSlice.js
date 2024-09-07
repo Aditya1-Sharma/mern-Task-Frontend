@@ -15,7 +15,7 @@ export const fetchUserData = createAsyncThunk(
     try {
       const { user } = getState();
       const response = await axios.get(
-        "http://localhost:8000/api/v1/user/getAllTask",
+        "https://mern-task-backend-qceg.onrender.com/api/v1/user/getAllTask",
         {
           withCredentials: true,
         }
@@ -34,7 +34,7 @@ export const deleteTask = createAsyncThunk(
   async (taskId, { rejectWithValue }) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/api/v1/user/deleteTask/${taskId}`,
+        `https://mern-task-backend-qceg.onrender.com/api/v1/user/deleteTask/${taskId}`,
         { withCredentials: true }
       );
       return response.data;
@@ -49,7 +49,7 @@ export const createTask = createAsyncThunk(
   async (taskData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/create",
+        "https://mern-task-backend-qceg.onrender.com/api/v1/user/create",
         taskData,
         {
           withCredentials: true,
@@ -67,7 +67,7 @@ export const updateTask = createAsyncThunk(
   async ({ taskData, taskId }, { rejectWithValue }) => {
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/v1/user/update/${taskId}`,
+        `https://mern-task-backend-qceg.onrender.com/api/v1/user/update/${taskId}`,
         taskData,
         { withCredentials: true }
       );
