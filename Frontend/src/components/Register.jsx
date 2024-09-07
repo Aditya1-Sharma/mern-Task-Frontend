@@ -21,7 +21,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "hhttps://mern-task-backend-qceg.onrender.com/api/v1/user/register",
+        "https://mern-task-backend-qceg.onrender.com/api/v1/user/register",
         form,
         {
           headers: {
